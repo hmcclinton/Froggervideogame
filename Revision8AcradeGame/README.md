@@ -28,7 +28,7 @@ collaboration with peers
 ###Changes###
 Took out trophy constructor
 
-Added Rock and Star at different scores for catgirl to collide with and remove from board
+Added Rock and Star to add obstacles on board to remove
 
 Fixed collison detection and now can always collide with Rock and Star
 
