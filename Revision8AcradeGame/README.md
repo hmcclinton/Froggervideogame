@@ -13,7 +13,7 @@ Collisions with bugs cat girl looses life
 
 Every time cat girl makes it to top of screen gain 100 points
 
-Cat girl wins game and gets mouse if she gains 500 points and trophy (which is rock)
+Cat girl wins game and gets mouse if she gains 500 points
 
 ###Resources###
 videos, forums, google
@@ -24,4 +24,7 @@ collaboration with peers
 
 
 ###Changes###
-Replaced image of Rock with Star now code matches
+Took out trophy variable
+Added Rock and Star at different scores to run over in game
+Fixed collison detection and now can always collide with Rock and Star
+Fixed code so rock code relates to rock and star code relates to star

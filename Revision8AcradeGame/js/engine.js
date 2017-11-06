@@ -81,11 +81,6 @@ var Engine = (function(global) {
                 player.collision();
             }
         });
-        if (player.trophys < 1) {
-        if (player.x < (star.x + star.width) && (player.x + player.width) >star.x && player.y < (star.y + star.height) && (player.y + player.height) > star.y) {
-                  star.reset();
-                }
-          }
     }
 
     /* This is called by the update function and loops through all of the
@@ -107,9 +102,9 @@ var Engine = (function(global) {
                 enemy.update(dt);
             });
         }
-
+        star.update();
         player.update();
-        trophys.update();
+        rock.update();
     }
     /* This function initially draws the "game level", it will then call
      * the renderEntities function. Remember, this function is called every
@@ -161,10 +156,12 @@ var Engine = (function(global) {
         });
         player.render();
 
-        if  (player.score > 0) {//(player.trophys < 1 && player.score > 0) {
-            star.render();
-        }
-
+      if  (player.score > 0) {
+          star.render();
+      }
+      if  (player.score > 200) {
+          rock.render();
+      }
         if (player.gameWon === true) {
             mouse.render();
         }
@@ -173,11 +170,13 @@ var Engine = (function(global) {
         if (player.gameOver !== true) {
             player.reset();
             star.reset();
+            rock.reset();
         }
     }
     function move() {
         if (player.gameOver !== true) {
             star.move();
+            rock.move();
         }
     }
 
@@ -192,6 +191,7 @@ var Engine = (function(global) {
         'images/enemy-bug.png',
         'images/char-horn-girl.png',
         'images/mouse.png',
+        'images/Rock.png',
         'images/Star.png'
     ]);
     Resources.onReady(init);
