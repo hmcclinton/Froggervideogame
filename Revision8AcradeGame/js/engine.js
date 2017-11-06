@@ -104,7 +104,6 @@ var Engine = (function(global) {
         }
         star.update();
         player.update();
-        rock.update();
     }
     /* This function initially draws the "game level", it will then call
      * the renderEntities function. Remember, this function is called every
@@ -159,9 +158,6 @@ var Engine = (function(global) {
       if  (player.score < 200) {
           star.render();
       }
-      if  (player.score < 400 && player.score > 200 ) {
-          rock.render();
-      }
         if (player.gameWon === true) {
             mouse.render();
         }
@@ -170,13 +166,11 @@ var Engine = (function(global) {
         if (player.gameOver !== true) {
             player.reset();
             star.reset();
-            rock.reset();
         }
     }
     function move() {
         if (player.gameOver !== true) {
             star.move();
-            rock.move();
         }
     }
 
@@ -191,7 +185,6 @@ var Engine = (function(global) {
         'images/enemy-bug.png',
         'images/char-horn-girl.png',
         'images/mouse.png',
-        'images/Rock.png',
         'images/Star.png'
     ]);
     Resources.onReady(init);

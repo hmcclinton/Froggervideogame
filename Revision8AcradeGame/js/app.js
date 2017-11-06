@@ -139,30 +139,6 @@ Star.prototype.reset = function(x, y) {
     this.sprite = 'images/Star.png';
 };
 
-var Rock = function(x, y) {
-    "use strict";
-    this.height = 83;
-    this.width = 70;
-    this.x = Math.floor(Math.random() * (505 - this.width));
-    this.y = Math.floor(Math.random() * (332 - this.height));
-    this.sprite = 'images/Rock.png';
-};
-Rock.prototype.render = function() {
-    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-};
-Rock.prototype.move = function(x, y) {
-    if (this.x < ctx.canvas.height) {
-        this.x -= 101;
-   } else {
-        this.x += 101;
-    }
-};
-Rock.prototype.reset = function(x, y) {
-    this.x = ctx.canvas.height;
-    this.y = ctx.canvas.height;
-    this.sprite = 'images/Rock.png';
-};
-
 // *variable to save the mouse
 var Mouse = function(x, y) {
     this.x = 202;
@@ -181,7 +157,6 @@ for (var i = 1; i < 4; i++) {
 var player = new Player();
 var star = new Star();
 var mouse = new Mouse();
-var rock = new Rock();
 
 // *Checking collisons with the star
 Star.prototype.update = function() {
@@ -199,27 +174,6 @@ Star.prototype.checkCollision = function() {
     }
 };
 Star.prototype.collisionDetected = function() {
-    "use strict";
-    this.x = 900;
-    this.y = 900;
-};
-
-// *Checking collisons with the rock
-Rock.prototype.update = function() {
-    "use strict";
-    this.checkCollision();
-};
-Rock.prototype.checkCollision = function() {
-    var playersIcon = {x: player.x, y: player.y, width: 70, height: 83};
-    var rockIcon = {x: this.x, y: this.y, width: 70, height: 83};
-    if (playersIcon.x < rockIcon.x + rockIcon.width &&
-        playersIcon.x + playersIcon.width > rockIcon.x &&
-        playersIcon.y < rockIcon.y + rockIcon.height &&
-        playersIcon.height + playersIcon.y > rockIcon.y) {
-        this.collisionDetected();
-    }
-};
-Rock.prototype.collisionDetected = function() {
     "use strict";
     this.x = 900;
     this.y = 900;
