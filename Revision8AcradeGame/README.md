@@ -15,7 +15,7 @@ Every time cat girl makes it to top of screen gain 100 points
 
 Cat girl wins game and gets mouse if she gains 500 points
 
-Cat girl can collide with rock and star to them remove from board
+Cat girl can collide with star to remove from board
 
 ###Resources###
 videos, forums, google
@@ -28,7 +28,7 @@ collaboration with peers
 ###Changes###
 Took out trophy constructor
 
-Added Rock and Star to add obstacles on board to remove
+Star is just an obstacle to clear now
 
 Fixed collison detection and now can always collide with Rock and Star
 
