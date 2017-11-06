@@ -134,8 +134,8 @@ Star.prototype.move = function(x, y) {
     }
 };
 Star.prototype.reset = function(x, y) {
-    this.x = this.x;
-    this.y = this.y;
+    this.x = ctx.canvas.height;
+    this.y = ctx.canvas.height;
     this.sprite = 'images/Star.png';
 };
 
@@ -158,8 +158,8 @@ Rock.prototype.move = function(x, y) {
     }
 };
 Rock.prototype.reset = function(x, y) {
-    this.x = this.x;
-    this.y = this.y;
+    this.x = ctx.canvas.height;
+    this.y = ctx.canvas.height;
     this.sprite = 'images/Rock.png';
 };
 
@@ -188,7 +188,6 @@ Star.prototype.update = function() {
     "use strict";
     this.checkCollision();
 };
-
 Star.prototype.checkCollision = function() {
     var playerIcon = {x: player.x, y: player.y, width: 70, height: 83};
     var starIcon = {x: this.x, y: this.y, width: 70, height: 83};
@@ -199,7 +198,6 @@ Star.prototype.checkCollision = function() {
         this.collisionDetected();
     }
 };
-
 Star.prototype.collisionDetected = function() {
     "use strict";
     this.x = 900;
@@ -211,7 +209,6 @@ Rock.prototype.update = function() {
     "use strict";
     this.checkCollision();
 };
-
 Rock.prototype.checkCollision = function() {
     var playersIcon = {x: player.x, y: player.y, width: 70, height: 83};
     var rockIcon = {x: this.x, y: this.y, width: 70, height: 83};
@@ -222,13 +219,11 @@ Rock.prototype.checkCollision = function() {
         this.collisionDetected();
     }
 };
-
 Rock.prototype.collisionDetected = function() {
     "use strict";
     this.x = 900;
     this.y = 900;
 };
-
 
 // *player.handleInput() method.
 document.addEventListener('keyup', function(e) {

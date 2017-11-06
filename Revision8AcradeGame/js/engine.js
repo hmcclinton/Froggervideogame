@@ -159,7 +159,7 @@ var Engine = (function(global) {
       if  (player.score > 0) {
           star.render();
       }
-      if  (player.score > 200) {
+      if  (player.score > 100) {
           rock.render();
       }
         if (player.gameWon === true) {
