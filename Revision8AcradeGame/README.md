@@ -30,6 +30,6 @@ Took out trophy constructor
 
 Star is just an obstacle to clear now
 
-Fixed collison detection and now can always collide with Rock and Star
+Fixed collison detection
 
-Fixed code so rock code relates to rock and star code relates to star
+Fixed code so  star code relates to star
